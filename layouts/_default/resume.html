@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/resume.css" />
+  <link rel="stylesheet" type="text/css" media="screen, print"
+    href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700" />
+</head>
+
+<body>
+  {{ $resume := $.Site.Data.resume }}
+  <div id="paper" class="container">
+    <div id="info">
+      <h1 id="name">{{ $resume.info.name }}</h1>
+      <p class="info">{{ $resume.info.email }} &bull; {{ $resume.info.phone }}</p>
+    </div>
+
+    <div class="resume-sections">
+      {{ range $resume.sections }}
+      <div class="row">
+        <div class="span2 title">
+          <h3>{{ .title }}</h3>
+        </div>
+
+        <div class="span9 content">
+          {{ range .items }}
+          <p class="lead">
+            {{ if isset . "url" }}
+            <a href="{{ .url }}" title="{{ .tooltip }}">{{ .title }}</a>
+            {{ else }}
+            <span>{{ .title }}</span>
+            {{ end }}
+
+            <span class="resume-subtitle">{{ .subtitle }}</span>
+            <span class="resume-subtitle resume-subtitle-right">{{ .date }}</span>
+          </p>
+          {{ if isset . "bullets" }}
+          <ul>
+            {{ range .bullets }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+      {{ end }}
+    </div>
+  </div>
+</body>
+
+</html>
