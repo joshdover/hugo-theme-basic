@@ -369,54 +369,57 @@ hr {
   border-bottom: 1px solid #ffffff;
 }
 
-#paper {
-  position: relative;
-  background-color: white;
-  margin-top: 50px;
-  padding: 50px;
-  -webkit-box-shadow: 0 0 8px #bbbbbb;
-  -moz-box-shadow: 0 0 8px #bbbbbb;
-  box-shadow: 0 0 8px #bbbbbb;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+@media screen {
+  #paper {
+    position: relative;
+    background-color: white;
+    margin-top: 50px;
+    padding: 50px;
+    -webkit-box-shadow: 0 0 8px #bbbbbb;
+    -moz-box-shadow: 0 0 8px #bbbbbb;
+    box-shadow: 0 0 8px #bbbbbb;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+  }
+  
+  #paper:before, #paper:after {
+    z-index: -1;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: "";
+    background-color: white;
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+    -webkit-box-shadow: 0 0 5px #cccccc;
+    -moz-box-shadow: 0 0 5px #cccccc;
+    box-shadow: 0 0 5px #cccccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+  }
+  
+  #paper:before {
+    z-index: -2;
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    transform: rotate(1deg);
+  }
 }
 
-#paper:before, #paper:after {
-  z-index: -1;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 100%;
-  height: 100%;
-  display: block;
-  content: "";
-  background-color: white;
-  -webkit-transform: rotate(-2deg);
-  -moz-transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg);
-  -o-transform: rotate(-2deg);
-  transform: rotate(-2deg);
-  -webkit-box-shadow: 0 0 5px #cccccc;
-  -moz-box-shadow: 0 0 5px #cccccc;
-  box-shadow: 0 0 5px #cccccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-}
-
-#paper:before {
-  z-index: -2;
-  -webkit-transform: rotate(1deg);
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -o-transform: rotate(1deg);
-  transform: rotate(1deg);
-}
 
 footer {
   margin-top: 40px;
